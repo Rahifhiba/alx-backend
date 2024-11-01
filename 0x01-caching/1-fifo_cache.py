@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" FIFO CACHING"""
 from base_caching import BaseCaching
 
 
