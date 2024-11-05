@@ -18,7 +18,7 @@ class Config:
 app.config.from_object(Config)
 
 
-@babel.localeselector()
+@babel.localeselector
 def get_local():
     """determine the best match with our supported languages."""
     return request.accept_languages.best_match(["en", "fr"])
