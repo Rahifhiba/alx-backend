@@ -28,11 +28,11 @@ def get_user():
     """returns a user dictionary or None if
     the ID cannot be found or if login_as was not passed."""
     user_id = request.args.get("login_as")
-    if user_id in users:
-        return users[user_id]
+    if user_id:
+        return users.get(int(user_id))
     return None
 
-app.jinja_env.globals['get_user'] = get_user
+
 @app.before_request
 def before_request():
     """find a user if any, and set it as a global on flask.g.user."""
